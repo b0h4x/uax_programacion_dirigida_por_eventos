@@ -3,4 +3,5 @@
     <string name="uax_logo_alt">UAX logo</string>
     <string name="button_start_game">Start game</string>
     <string name="button_profile">Profile</string>
+    <string name="title_settings_menu">Settings</string>
 </resources>
