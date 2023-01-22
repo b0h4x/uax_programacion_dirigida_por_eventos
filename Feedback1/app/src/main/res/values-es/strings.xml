@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Feedback1</string>
     <string name="uax_logo_alt">UAX logo</string>
     <string name="button_start_game">Start game</string>
-    <string name="button_profile">Profile</string>
+    <string name="button_profile">Perfil</string>
 </resources>
