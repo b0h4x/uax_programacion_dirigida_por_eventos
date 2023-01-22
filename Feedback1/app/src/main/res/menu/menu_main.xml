@@ -7,4 +7,10 @@
         android:orderInCategory="100"
         app:showAsAction="never"/>
 
+    <item android:title="@string/night_mode"
+        android:id="@+id/night_mode"
+        android:icon="@drawable/mode_night"
+        android:orderInCategory="50"
+        app:showAsAction="ifRoom"/>
+
 </menu>
