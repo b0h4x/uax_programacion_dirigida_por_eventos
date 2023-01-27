@@ -13,4 +13,9 @@
         android:orderInCategory="50"
         app:showAsAction="ifRoom"/>
 
+    <item android:title="@string/lang_mode"
+        android:id="@+id/lang_mode"
+        android:icon="@drawable/es"
+        android:orderInCategory="40"
+        app:showAsAction="ifRoom"/>
 </menu>
