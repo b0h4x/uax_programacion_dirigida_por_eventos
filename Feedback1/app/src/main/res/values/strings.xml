@@ -6,4 +6,9 @@
     <string name="title_settings_menu">Settings</string>
     <string name="night_mode">Night-mode</string>
     <string name="lang_mode">Language</string>
+    <string name="game_instructions_text">You will see some country flags and you have to guess the country of each one.</string>
+    <string name="game_instructions_title">Instructions</string>
+    <string name="ok_button">OK</string>
+    <string name="info_lang">Remember than if you switch the locale to ES, you can also use the Spanish version</string>
+    <string name="info_popup">Info</string>
 </resources>

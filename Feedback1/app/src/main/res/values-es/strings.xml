@@ -6,4 +6,10 @@
     <string name="button_profile">Perfil</string>
     <string name="title_settings_menu">Ajustes</string>
     <string name="night_mode">Modo nocturno</string>
+    <string name="lang_mode">Idioma</string>
+    <string name="game_instructions_text">Verás algunos países y tienes que adivinar sus capitales.</string>
+    <string name="game_instructions_title">Instrucciones</string>
+    <string name="ok_button">Vale</string>
+    <string name="info_lang">Recuerda que si cambias el locale a EN, podrás usar la versión en inglés</string>
+    <string name="info_popup">Info</string>
 </resources>
