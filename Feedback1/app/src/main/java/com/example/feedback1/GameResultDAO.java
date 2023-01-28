@@ -8,7 +8,7 @@ import androidx.room.Query;
 import java.util.List;
 
 @Dao
-public interface ResultGameDAO {
+public interface GameResultDAO {
     @Insert
     void insert(int score);
 
