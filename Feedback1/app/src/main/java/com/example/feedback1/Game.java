@@ -1,5 +1,6 @@
 package com.example.feedback1;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -9,6 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,7 +30,7 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Game extends BaseActivity {
+public class Game extends AppCompatActivity {
     ImageView mFlagImage;
     TextView mScore;
     ProgressBar progressBar;
@@ -168,6 +171,9 @@ public class Game extends BaseActivity {
     private void finishGame() {
         // Add logic with the DAO, to store results TODO
         finish();
+        Intent intent = new Intent(Game.this, GameResults.class);
+        intent.putExtra("score", score);
+        startActivity(intent);
     }
 
     private void setFlag (JSONObject country) {
@@ -176,7 +182,6 @@ public class Game extends BaseActivity {
             public void run() {
                 try{
                     String flagUrl = (String) country.getJSONObject("flags").get("png");
-                   Log.d("ljaja", flagUrl);
                     URL url = new  URL(flagUrl);
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setDoInput(true);

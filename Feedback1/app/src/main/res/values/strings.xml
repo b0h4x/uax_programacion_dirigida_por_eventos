@@ -14,4 +14,7 @@
     <string name="score_title">Score</string>
     <string name="flagimage">flagImage</string>
     <string name="score_text">Score: </string>
+    <string name="game_finished_title_score">Game finished! Your score is:</string>
+    <string name="your_score_is"></string>
+    <string name="go_back">Go back</string>
 </resources>
