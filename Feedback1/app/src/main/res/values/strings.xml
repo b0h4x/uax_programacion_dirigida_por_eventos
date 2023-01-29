@@ -21,4 +21,6 @@
     <string name="light_mode">Light mode</string>
     <string name="about_dialog_title">About</string>
     <string name="dialog_about_message">App done for the Feedback1 of the UAX</string>
+    <string name="share_score_text">My score on this game was: </string>
+    <string name="share_button">Share</string>
 </resources>

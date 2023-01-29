@@ -34,7 +34,8 @@ public class ScoresActivity extends BaseActivity {
 
         mGameResultViewModel.insert(12345);
         mGameResultViewModel.insert(12345);
-
+        mGameResultViewModel.insert(2222);
+        mGameResultViewModel.insert(33333);
 
 //        List<GameResult> lol = (List<GameResult>) mGameResultViewModel.getmAllResults();
     }
