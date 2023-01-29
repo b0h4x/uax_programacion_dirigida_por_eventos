@@ -2,6 +2,7 @@ package com.example.feedback1;
 
 import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -70,6 +71,18 @@ public class BaseActivity extends AppCompatActivity {
             case (R.id.delete_icon):
                 mGameResultViewModel.removeAll();
                 break;
+            case (R.id.about):
+                AlertDialog.Builder builder = new AlertDialog.Builder(BaseActivity.this);
+                builder.setMessage(R.string.dialog_about_message)
+                        .setTitle(R.string.about_dialog_title)
+                        .setCancelable(true)
+                        .setPositiveButton(R.string.ok_button, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.show();
         }
         return super.onOptionsItemSelected(item);
     }

@@ -19,4 +19,6 @@
     <string name="go_back">Go back</string>
     <string name="no_score">No score</string>
     <string name="light_mode">Light mode</string>
+    <string name="about_dialog_title">About</string>
+    <string name="dialog_about_message">App done for the Feedback1 of the UAX</string>
 </resources>
