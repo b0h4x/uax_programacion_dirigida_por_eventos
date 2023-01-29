@@ -15,8 +15,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 import java.io.Console;
+import java.util.List;
 import java.util.Locale;
 
 public class BaseActivity extends AppCompatActivity {
@@ -24,6 +27,7 @@ public class BaseActivity extends AppCompatActivity {
     String language;
     SharedPreferences mSharedPreferences;
     static final String NIGHT_MODE = "NIGHT_MODE";
+    GameResultViewModel mGameResultViewModel;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,6 +37,7 @@ public class BaseActivity extends AppCompatActivity {
         Locale currentLocale = Locale.getDefault();
         language = currentLocale.getLanguage();
         super.onCreate(savedInstanceState);
+        mGameResultViewModel = ViewModelProviders.of(this).get(GameResultViewModel.class);
     }
 
     @Override
@@ -42,8 +47,8 @@ public class BaseActivity extends AppCompatActivity {
         // which sets the corrects variables from SharedPreferences
         setNightMode(nightModeEnabled, menu.findItem(R.id.night_mode));
         setLangIcon(language, menu.findItem(R.id.lang_mode));
-        if (getClass().getSimpleName().equals("ScoresActivity")) {
-            menu.findItem(R.id.lang_mode).setVisible(false);
+        if (!getClass().getSimpleName().equals("ScoresActivity")) {
+            menu.findItem(R.id.delete_icon).setVisible(false);
         }
         return true;
     }
@@ -61,6 +66,10 @@ public class BaseActivity extends AppCompatActivity {
                 break;
             case (R.id.lang_mode):
                 infoLang(language, item);
+                break;
+            case (R.id.delete_icon):
+                mGameResultViewModel.removeAll();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -70,9 +79,11 @@ public class BaseActivity extends AppCompatActivity {
         if (nightModeEnabled) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             menuItem.setIcon(R.drawable.light_mode);
+            menuItem.setTitle(R.string.light_mode);
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             menuItem.setIcon(R.drawable.night_mode);
+            menuItem.setTitle(R.string.night_mode);
         }
     }
 

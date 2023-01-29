@@ -21,7 +21,7 @@
 
     <item android:title="@string/lang_mode"
         android:id="@+id/delete_icon"
-        android:icon="@drawable/es"
+        android:icon="@drawable/delete_icon"
         android:orderInCategory="1"
         app:showAsAction="ifRoom"/>
 </menu>
