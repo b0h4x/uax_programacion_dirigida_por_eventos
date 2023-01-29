@@ -3,7 +3,7 @@
     <string name="uax_logo_alt">UAX logo</string>
     <string name="button_start_game">Start game</string>
     <string name="button_profile">Profile</string>
-    <string name="title_settings_menu">Settings</string>
+    <string name="title_about_menu">About</string>
     <string name="night_mode">Night-mode</string>
     <string name="lang_mode">Language</string>
     <string name="game_instructions_text">You will see some country flags and you have to guess the country of each one.</string>
