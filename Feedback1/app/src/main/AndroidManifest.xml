@@ -15,9 +15,17 @@
         android:theme="@style/Theme.Feedback1"
         tools:targetApi="31">
         <activity
-            android:name=".GameResults"
-            android:screenOrientation="portrait"
+            android:name=".ScoresActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".GameResults"
+            android:exported="false"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -25,8 +33,8 @@
         <activity
             android:name=".Game"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

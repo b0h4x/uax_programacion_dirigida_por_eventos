@@ -15,6 +15,7 @@ public class MainActivity extends BaseActivity {
         // Inflate
         setContentView(R.layout.activity_main);
 
+        // Game Button
         Button button= (Button)findViewById(R.id.button_start_game);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -33,6 +34,16 @@ public class MainActivity extends BaseActivity {
                        });
                AlertDialog alert = builder.create();
                alert.show();
+            }
+        });
+
+        // Results button
+        Button buttonResults = (Button)findViewById(R.id.button_results);
+        buttonResults.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ScoresActivity.class);
+                startActivity(intent);
             }
         });
     }

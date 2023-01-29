@@ -5,6 +5,7 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class GameResultViewModel extends AndroidViewModel {
@@ -19,6 +20,10 @@ public class GameResultViewModel extends AndroidViewModel {
     LiveData<List<GameResult>> getmAllResults() {
         return mAllResults;
     }
+
+   void removeAll() {
+        mRepository.removeAll();
+   }
 
     public void insert(int score) {
         mRepository.insert(score);

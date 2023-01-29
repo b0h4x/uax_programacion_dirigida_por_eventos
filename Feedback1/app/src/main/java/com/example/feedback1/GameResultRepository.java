@@ -19,14 +19,26 @@ public class GameResultRepository {
        return mAllResults;
     }
 
+    void removeAll() {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                mGameResultDAO.deleteAll();
+            }
+        });
+        thread.start();
+    }
+
     public void insert (int score) {
         Thread thread = new Thread(
                 new Runnable() {
                     @Override
                     public void run() {
-                        mGameResultDAO.insert(score);
+                        GameResult result = new GameResult(score);
+                        mGameResultDAO.insert(result);
                     }
                 }
         );
+        thread.start();
     }
 }

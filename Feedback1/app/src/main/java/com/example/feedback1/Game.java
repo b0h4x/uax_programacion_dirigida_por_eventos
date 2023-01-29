@@ -144,10 +144,10 @@ public class Game extends AppCompatActivity {
                             // Make request
                             URL url = new URL("https://restcountries.com/v3.1/all");
                             HttpURLConnection con = (HttpURLConnection) url.openConnection();
-                            con.setRequestProperty("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36");
+                            con.setRequestProperty("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.37");
                             con.setRequestMethod("GET");
-
                             // Read the response
+
                             BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream())) ;
                             String inputLine;
                             StringBuilder content = new StringBuilder();
@@ -156,6 +156,7 @@ public class Game extends AppCompatActivity {
                             }
                             in.close();
                             // parse JSON
+
                             countries = new JSONArray(content.toString());
                         } catch (Exception e) {
                             Log.d("FailAPI", "Failed fetching the API" + e.toString());

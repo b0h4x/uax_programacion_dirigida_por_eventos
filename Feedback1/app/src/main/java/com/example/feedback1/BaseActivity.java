@@ -42,6 +42,9 @@ public class BaseActivity extends AppCompatActivity {
         // which sets the corrects variables from SharedPreferences
         setNightMode(nightModeEnabled, menu.findItem(R.id.night_mode));
         setLangIcon(language, menu.findItem(R.id.lang_mode));
+        if (getClass().getSimpleName().equals("ScoresActivity")) {
+            menu.findItem(R.id.lang_mode).setVisible(false);
+        }
         return true;
     }
 

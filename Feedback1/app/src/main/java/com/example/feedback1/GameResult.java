@@ -9,7 +9,13 @@ import androidx.room.PrimaryKey;
 public class GameResult {
     @PrimaryKey(autoGenerate = true)
     @NonNull
-    private int id;
+    int id;
 
     int score;
+
+    public GameResult(int score) {
+        this.score = score;
+    }
+
+    public int getScore() {return this.score;}
 }

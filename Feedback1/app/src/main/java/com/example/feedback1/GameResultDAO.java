@@ -10,7 +10,7 @@ import java.util.List;
 @Dao
 public interface GameResultDAO {
     @Insert
-    void insert(int score);
+    void insert(GameResult result);
 
     // truncate table
     @Query("DELETE FROM results_table")
