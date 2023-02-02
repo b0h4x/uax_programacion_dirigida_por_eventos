@@ -38,13 +38,15 @@ public class Game extends AppCompatActivity {
     int progressBarCount = 60;
     JSONArray countries;
     JSONObject country;
+    // Fixes the bug
+    Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         progressBar = findViewById(R.id.progressBar2);
-        Timer timer = new Timer();
+        timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -75,6 +77,12 @@ public class Game extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        timer.cancel();
     }
 
     private void startGame() throws JSONException {
