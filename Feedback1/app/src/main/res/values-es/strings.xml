@@ -12,4 +12,16 @@
     <string name="ok_button">Vale</string>
     <string name="info_lang">Recuerda que si cambias el locale a EN, podrás usar la versión en inglés</string>
     <string name="info_popup">Info</string>
+    <string name="score_title">Puntuación</string>
+    <string name="title_about_menu">Acerca de</string>
+    <string name="flagimage">imagenBandera</string>
+    <string name="score_text">Puntuación:</string>
+    <string name="game_finished_title_score">Juego terminado! Tu puntuación es:</string>
+    <string name="go_back">Volver atrás</string>
+    <string name="no_score">Sin puntuación</string>
+    <string name="light_mode">Modo claro</string>
+    <string name="about_dialog_title">Acerca de</string>
+    <string name="dialog_about_message">App hecha para el ejercicio de Feedback 1 de la UAX.</string>
+    <string name="share_score_text">My puntuación en la partida fue:</string>
+    <string name="share_button">Compartir</string>
 </resources>

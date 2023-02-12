@@ -23,4 +23,5 @@
     <string name="dialog_about_message">App done for the Feedback1 of the UAX</string>
     <string name="share_score_text">My score on this game was: </string>
     <string name="share_button">Share</string>
+    <string name="title_settings_menu">Settings</string>
 </resources>
