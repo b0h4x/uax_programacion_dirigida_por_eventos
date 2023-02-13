@@ -1,8 +1,12 @@
 package com.example.feedback2;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
+import android.annotation.SuppressLint;
+import android.location.Location;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -13,7 +17,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.feedback2.databinding.ActivityMapsBinding;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
 
@@ -30,22 +33,33 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
+    @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        // Add a marker in Madrid and move the camera
+        LatLng madrid = new LatLng(40.41853, -3.69190);
+        mMap.addMarker(new MarkerOptions().position(madrid).title(getString(R.string.title_map_marker)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(madrid));
+        // Get user geo
+        mMap.setMyLocationEnabled(true);
+        // Listener if user clicks in its position, to show the coordinates.
+        mMap.setOnMyLocationClickListener(new GoogleMap.OnMyLocationClickListener() {
+            @Override
+            public void onMyLocationClick(@NonNull Location location) {
+                Toast.makeText(getBaseContext(), getString(R.string.current_location_user) + location,
+                                Toast.LENGTH_LONG)
+                        .show();
+            }
+        });
+        mMap.setOnMyLocationButtonClickListener(new GoogleMap.OnMyLocationButtonClickListener() {
+            @Override
+            public boolean onMyLocationButtonClick() {
+                Toast.makeText(getBaseContext(), R.string.location_button_clicked, Toast.LENGTH_LONG)
+                        .show();
+                return false;
+            }
+        });
     }
 }

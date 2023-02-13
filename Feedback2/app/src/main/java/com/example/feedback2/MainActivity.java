@@ -1,10 +1,17 @@
 package com.example.feedback2;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
+
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.Manifest;
 
 public class MainActivity extends BaseActivity {
     Button mButtonMaps;
@@ -48,7 +55,7 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        // Maps butotn
+        // Maps button
         mButtonMaps = (Button) findViewById(R.id.button_maps);
         mButtonMaps.setOnClickListener(
                 new View.OnClickListener(){
@@ -59,5 +66,24 @@ public class MainActivity extends BaseActivity {
                     }
                 }
         );
+        ActivityResultLauncher<String> requestPermissionLauncher =
+                registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+                    if (isGranted) {
+                        Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Log.d("fail", "faili");
+                    }
+                });
+
+        if (ContextCompat.checkSelfPermission(
+            this, Manifest.permission.ACCESS_COARSE_LOCATION) ==
+            PackageManager.PERMISSION_GRANTED) {
+            // You can use the API that requires the permission.
+            Log.d("jejeje","aaa");
+        } else {
+            requestPermissionLauncher.launch(
+                    Manifest.permission.ACCESS_COARSE_LOCATION);
+        }
     }
 }

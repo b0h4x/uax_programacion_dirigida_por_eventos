@@ -25,4 +25,7 @@
     <string name="share_button">Share</string>
     <string name="title_settings_menu">Settings</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_map_marker">Marker in Madrid</string>
+    <string name="location_button_clicked">Moving to user location...</string>
+    <string name="current_location_user">Current location:\n</string>
 </resources>
