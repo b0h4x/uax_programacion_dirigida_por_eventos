@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends BaseActivity {
+    Button mButtonMaps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,5 +47,17 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
+
+        // Maps butotn
+        mButtonMaps = (Button) findViewById(R.id.button_maps);
+        mButtonMaps.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 }
