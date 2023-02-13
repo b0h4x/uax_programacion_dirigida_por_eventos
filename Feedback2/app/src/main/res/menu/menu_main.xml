@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/about"
+        android:title="@string/title_about_menu"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+
+    <item android:title="@string/night_mode"
+        android:id="@+id/night_mode"
+        android:icon="@drawable/night_mode"
+        android:orderInCategory="50"
+        app:showAsAction="ifRoom"/>
+
+    <item android:title="@string/lang_mode"
+        android:id="@+id/lang_mode"
+        android:icon="@drawable/es"
+        android:orderInCategory="40"
+        app:showAsAction="ifRoom"/>
+
+    <item android:title="@string/lang_mode"
+        android:id="@+id/delete_icon"
+        android:icon="@drawable/delete_icon"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom"/>
+</menu>

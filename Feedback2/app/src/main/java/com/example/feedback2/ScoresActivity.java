@@ -1,0 +1,40 @@
+package com.example.feedback2;
+
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Bundle;
+
+import java.util.List;
+
+public class ScoresActivity extends BaseActivity {
+    RecyclerView mRecyclerView;
+    private GameResultViewModel mGameResultViewModel;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_scores);
+        mRecyclerView = findViewById(R.id.recycler_view);
+
+        final GameResultListAdapter adapter = new GameResultListAdapter(this);
+        mRecyclerView.setAdapter(adapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mGameResultViewModel = ViewModelProviders.of(this).get(GameResultViewModel.class);
+        mGameResultViewModel.getmAllResults().observe(this, new Observer<List<GameResult>>() {
+            @Override
+            public void onChanged(List<GameResult> gameResults) {
+                adapter.setGameResults(gameResults);
+            }
+        });
+
+        mGameResultViewModel.insert(12345);
+        mGameResultViewModel.insert(12345);
+        mGameResultViewModel.insert(2222);
+        mGameResultViewModel.insert(33333);
+
+//        List<GameResult> lol = (List<GameResult>) mGameResultViewModel.getmAllResults();
+    }
+}

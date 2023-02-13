@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Feedback2</string>
+    <string name="uax_logo_alt">UAX logo</string>
+    <string name="button_start_game">Start game</string>
+    <string name="button_profile">Profile</string>
+    <string name="title_about_menu">About</string>
+    <string name="night_mode">Night-mode</string>
+    <string name="lang_mode">Language</string>
+    <string name="game_instructions_text">You will see some country flags and you have to guess the country of each one.</string>
+    <string name="game_instructions_title">Instructions</string>
+    <string name="ok_button">OK</string>
+    <string name="info_lang">Remember than if you switch the locale to ES, you can also use the Spanish version</string>
+    <string name="info_popup">Info</string>
+    <string name="score_title">Score</string>
+    <string name="flagimage">flagImage</string>
+    <string name="score_text">Score: </string>
+    <string name="game_finished_title_score">Game finished! Your score is:</string>
+    <string name="your_score_is"></string>
+    <string name="go_back">Go back</string>
+    <string name="no_score">No score</string>
+    <string name="light_mode">Light mode</string>
+    <string name="about_dialog_title">About</string>
+    <string name="dialog_about_message">App done for the Feedback1 of the UAX</string>
+    <string name="share_score_text">My score on this game was: </string>
+    <string name="share_button">Share</string>
+    <string name="title_settings_menu">Settings</string>
+</resources>
