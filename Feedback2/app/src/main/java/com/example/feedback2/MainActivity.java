@@ -3,20 +3,24 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
+import androidx.preference.PreferenceManager;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.Manifest;
+import android.widget.ImageView;
 
 import com.example.feedback2.ui.login.LoginActivity;
 
 public class MainActivity extends BaseActivity {
     Button mButtonMaps;
+    ImageView mLogoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,10 +96,19 @@ public class MainActivity extends BaseActivity {
             this, Manifest.permission.ACCESS_COARSE_LOCATION) ==
             PackageManager.PERMISSION_GRANTED) {
             // You can use the API that requires the permission.
-            Log.d("jejeje","aaa");
         } else {
             requestPermissionLauncher.launch(
                     Manifest.permission.ACCESS_COARSE_LOCATION);
+        }
+
+        SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(this);
+        String name = sharedPreferences.getString("logo", "");
+        // Check logo preference
+        if (name.equals("setter")) {
+            mLogoView = findViewById(R.id.imageView);
+            Log.d("hue", String.valueOf(R.id.imageView));
+            mLogoView.setImageResource(R.drawable.dog);
         }
     }
 }

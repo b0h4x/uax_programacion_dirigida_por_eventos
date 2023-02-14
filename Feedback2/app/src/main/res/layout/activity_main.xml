@@ -14,10 +14,10 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/logo_uax_main_menu"
-            android:contentDescription="@string/uax_logo_alt" />
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:contentDescription="@string/uax_logo_alt"
+            app:srcCompat="@drawable/logo_uax_main_menu" />
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -6,6 +6,11 @@
         android:title="@string/title_about_menu"
         android:orderInCategory="100"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/settings"
+        android:title="Settings"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
 
     <item android:title="@string/night_mode"
         android:id="@+id/night_mode"

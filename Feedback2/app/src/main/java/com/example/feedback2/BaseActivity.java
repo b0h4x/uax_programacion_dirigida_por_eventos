@@ -3,6 +3,7 @@ package com.example.feedback2;
 import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
@@ -77,6 +78,10 @@ public class BaseActivity extends AppCompatActivity {
                         });
                 AlertDialog alert = builder.create();
                 alert.show();
+                break;
+            case (R.id.settings):
+                Intent intent = new Intent(BaseActivity.this, SettingsActivity.class);
+                startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
