@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.Manifest;
 
+import com.example.feedback2.ui.login.LoginActivity;
+
 public class MainActivity extends BaseActivity {
     Button mButtonMaps;
 
@@ -46,11 +48,21 @@ public class MainActivity extends BaseActivity {
         });
 
         // Results button
-        Button buttonResults = (Button)findViewById(R.id.button_results);
-        buttonResults.setOnClickListener(new View.OnClickListener(){
+        Button mButtonResults = (Button)findViewById(R.id.button_results);
+        mButtonResults.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ScoresActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Login button
+        Button mLogginButton = (Button)findViewById(R.id.button_log_in);
+        mLogginButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });

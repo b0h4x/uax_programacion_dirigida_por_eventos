@@ -28,4 +28,15 @@
     <string name="title_map_marker">Marker in Madrid</string>
     <string name="location_button_clicked">Moving to user location...</string>
     <string name="current_location_user">Current location:\n</string>
+    <string name="title_activity_login">My Login Activity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="log_in_button">Log in</string>
+    <string name="where_am_i_button">where am I?</string>
 </resources>
