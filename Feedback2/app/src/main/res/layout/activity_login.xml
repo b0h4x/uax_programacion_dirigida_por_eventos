@@ -12,9 +12,10 @@
     android:background="@drawable/background_login_register"
     tools:context=".ui.login.LoginActivity">
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/username"
         style="@style/loginText"
+        android:completionThreshold="0"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"

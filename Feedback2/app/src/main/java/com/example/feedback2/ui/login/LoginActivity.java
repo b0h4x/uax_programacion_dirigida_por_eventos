@@ -16,6 +16,8 @@ import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -42,7 +44,8 @@ public class LoginActivity extends AppCompatActivity {
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
-        final EditText usernameEditText = binding.username;
+        // make username autocompletable
+        final AutoCompleteTextView usernameEditText = (AutoCompleteTextView) binding.username;
         final EditText passwordEditText = binding.password;
         final Button loginButton = binding.login;
         final ProgressBar loadingProgressBar = binding.loading;
@@ -120,6 +123,22 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+            }
+        });
+
+        // Get the String array from resources
+        String[] users = getResources().getStringArray(R.array.users_autocompletion);
+        // Create the adapter
+        ArrayAdapter<String> adapter =
+        new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, users);
+        // Bind the adapter
+        usernameEditText.setAdapter(adapter);
+
+        //Show the dropdrown as soon as clicked.
+        usernameEditText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                usernameEditText.showDropDown();
             }
         });
     }
