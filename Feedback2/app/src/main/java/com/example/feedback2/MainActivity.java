@@ -15,12 +15,17 @@ import android.view.View;
 import android.widget.Button;
 import android.Manifest;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.feedback2.ui.login.LoginActivity;
+
+import java.util.Date;
 
 public class MainActivity extends BaseActivity {
     Button mButtonMaps;
     ImageView mLogoView;
+    TextView mTextView;
+    TextView mDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,12 +108,24 @@ public class MainActivity extends BaseActivity {
 
         SharedPreferences sharedPreferences =
                 PreferenceManager.getDefaultSharedPreferences(this);
-        String name = sharedPreferences.getString("logo", "");
+        String logoPreference = sharedPreferences.getString("logo", "");
         // Check logo preference
-        if (name.equals("setter")) {
+        if (logoPreference.equals("setter")) {
             mLogoView = findViewById(R.id.imageView);
-            Log.d("hue", String.valueOf(R.id.imageView));
             mLogoView.setImageResource(R.drawable.dog);
+        }
+        // Check signature preference
+        String signaturePreference = sharedPreferences.getString("signature", "");
+        if (!signaturePreference.equals("")) {
+            mTextView = findViewById(R.id.signatureText);
+            mTextView.setText("Your signature is: " + signaturePreference);
+        }
+        // Check date preference
+        Boolean datePreference = sharedPreferences.getBoolean("date", false);
+        if (datePreference) {
+            Date date = new Date();
+            mDate = findViewById(R.id.date_text);
+            mDate.setText("Date is: " + date.toString());
         }
     }
 }

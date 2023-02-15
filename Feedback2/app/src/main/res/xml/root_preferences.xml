@@ -20,8 +20,8 @@
     <PreferenceCategory app:title="@string/sync_header">
 
         <SwitchPreferenceCompat
-            app:key="sync"
-            app:title="@string/sync_title" />
+            app:key="date"
+            app:title="@string/date_title" />
     </PreferenceCategory>
 
 </PreferenceScreen>
