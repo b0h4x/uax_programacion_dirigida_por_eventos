@@ -15,7 +15,7 @@
     <string name="flagimage">flagImage</string>
     <string name="score_text">Score: </string>
     <string name="game_finished_title_score">Game finished! Your score is:</string>
-    <string name="your_score_is"></string>
+    <string name="your_score_is">"Your score is: "</string>
     <string name="go_back">Go back</string>
     <string name="no_score">No score</string>
     <string name="light_mode">Light mode</string>
@@ -65,7 +65,10 @@
     <string name="signature_text">You have no signature yet (Add it in Settings)</string>
     <string name="title_activity_tabbed">TabbedActivity</string>
     <string name="tab_text_1">Memes</string>
-    <string name="tab_text_2">Facts</string>
+    <string name="tab_text_2">Quotes</string>
     <string name="mem_text">Here we would have some memes for example.</string>
     <string name="quotes_text">Here we would have quotes for example.</string>
+    <string name="tabs">Tabs</string>
+    <string name="date_main">Date is: </string>
+    <string name="signature_textt">Your signature is: </string>
 </resources>

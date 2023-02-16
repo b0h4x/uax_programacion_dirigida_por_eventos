@@ -10,36 +10,76 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="459dp"
             android:contentDescription="@string/uax_logo_alt"
             app:srcCompat="@drawable/logo_uax_main_menu" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center|center_horizontal"
-            android:orientation="vertical">
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="50dp">
 
             <Button
                 android:id="@+id/button_start_game"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_margin="40dp"
                 android:text="@string/button_start_game"
-                android:textSize="42sp" />
+                android:textSize="48sp" />
 
             <Button
                 android:id="@+id/button_results"
                 android:layout_width="wrap_content"
-                android:layout_margin="20dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="40dp"
                 android:text="@string/button_profile"
-                android:textSize="42sp" />
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/button_maps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                android:text="@string/where_am_i_button"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/button_log_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                android:text="@string/log_in_button"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/button_tabs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                android:text="@string/tabs"
+                android:textSize="48sp" />
+
+            <TextView
+                android:id="@+id/signatureText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/signature_text"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                android:textSize="34sp" />
 
         </LinearLayout>
 

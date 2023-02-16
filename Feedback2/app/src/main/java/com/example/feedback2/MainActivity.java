@@ -129,14 +129,14 @@ public class MainActivity extends BaseActivity {
         String signaturePreference = sharedPreferences.getString("signature", "");
         if (!signaturePreference.equals("")) {
             mTextView = findViewById(R.id.signatureText);
-            mTextView.setText("Your signature is: " + signaturePreference);
+            mTextView.setText(getString(R.string.signature_textt) + signaturePreference);
         }
         // Check date preference
         Boolean datePreference = sharedPreferences.getBoolean("date", false);
         if (datePreference) {
             Date date = new Date();
             mDate = findViewById(R.id.date_text);
-            mDate.setText("Date is: " + date.toString());
+            mDate.setText(getString(R.string.date_main) + date.toString());
         }
 
     }
