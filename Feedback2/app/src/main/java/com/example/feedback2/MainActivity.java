@@ -26,6 +26,7 @@ public class MainActivity extends BaseActivity {
     ImageView mLogoView;
     TextView mTextView;
     TextView mDate;
+    Button mButtonTabs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +98,16 @@ public class MainActivity extends BaseActivity {
                     }
                 });
 
+        // Tabs button
+        mButtonTabs = findViewById(R.id.button_tabs);
+        mButtonTabs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TabbedActivity.class);
+                startActivity(intent);
+            }
+        });
+
         if (ContextCompat.checkSelfPermission(
             this, Manifest.permission.ACCESS_COARSE_LOCATION) ==
             PackageManager.PERMISSION_GRANTED) {
@@ -127,5 +138,6 @@ public class MainActivity extends BaseActivity {
             mDate = findViewById(R.id.date_text);
             mDate.setText("Date is: " + date.toString());
         }
+
     }
 }

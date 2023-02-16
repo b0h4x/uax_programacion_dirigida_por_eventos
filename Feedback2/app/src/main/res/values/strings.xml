@@ -63,4 +63,9 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="signature_text">You have no signature yet (Add it in Settings)</string>
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="tab_text_1">Memes</string>
+    <string name="tab_text_2">Facts</string>
+    <string name="mem_text">Here we would have some memes for example.</string>
+    <string name="quotes_text">Here we would have quotes for example.</string>
 </resources>
