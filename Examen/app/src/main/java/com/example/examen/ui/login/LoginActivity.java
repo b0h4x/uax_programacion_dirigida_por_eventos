@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -22,15 +23,21 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.examen.LoginSuccessful;
 import com.example.examen.R;
 import com.example.examen.ui.login.LoginViewModel;
 import com.example.examen.ui.login.LoginViewModelFactory;
 import com.example.examen.databinding.ActivityLoginBinding;
+import com.google.android.material.snackbar.Snackbar;
 
 public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
     private ActivityLoginBinding binding;
+    TextView mTextGetNew;
+    TextView mTextCreatenew;
+    EditText mTextUsername;
+    EditText mTextPassword;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
         final EditText usernameEditText = binding.username;
         final EditText passwordEditText = binding.password;
-        final Button loginButton = binding.login;
+        final Button loginButton = (Button) binding.login;
         final ProgressBar loadingProgressBar = binding.loading;
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
@@ -79,8 +86,8 @@ public class LoginActivity extends AppCompatActivity {
                 setResult(Activity.RESULT_OK);
 
                 // Go to the login successful activity
-
-
+                Intent intent = new Intent(LoginActivity.this, LoginSuccessful.class);
+                startActivity(intent);
             }
         });
 
@@ -121,6 +128,48 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+            }
+        });
+
+        // Coming soon para el get new
+        mTextGetNew = findViewById(R.id.get_new);
+        mTextGetNew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(v, "Coming soon!", Snackbar.LENGTH_LONG).show();
+            }
+        });
+
+        // Coming soon para el create new
+        mTextCreatenew = findViewById(R.id.create_new);
+        mTextCreatenew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(v, "Coming soon!", Snackbar.LENGTH_LONG).show();
+            }
+        });
+
+        // Add enter support
+        mTextUsername = findViewById(R.id.username);
+        mTextPassword = findViewById(R.id.password);
+
+        mTextUsername.setOnEditorActionListener(new TextView.OnEditorActionListener(){
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    loginButton.performClick();
+                }
+                return false;
+            }
+        });
+
+        mTextPassword.setOnEditorActionListener(new TextView.OnEditorActionListener(){
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    loginButton.performClick();
+                }
+                return false;
             }
         });
     }
